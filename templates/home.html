@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Pratigya {% endblock title %}
+
+{% block hero %}
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+  <div class="hero-container" data-aos="fade-in">
+    <h1>Pratigya</h1>
+    <p>
+      I'm
+      <span class="typed" data-typed-items="Developer, "></span>
+    </p>
+    <div class="text-center mt-4">
+      <a href="{% static 'assets/img/Pratigya_resume.pdf' %}" target="_blank" class="btn btn-primary"> Hire Me</a>
+    </div>
+  </div>
+</section>
+{% endblock hero %}
+
+{% block body %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<!-- Add Hire Me button with download link -->
+{% comment %} <div class="text-center mt-4">
+  <a href="{% static 'assets/img/Pratigya_resume.pdf' %}" download class="btn btn-primary"> Hire Me</a>
+</div> {% endcomment %}
+
+{% endblock body %}

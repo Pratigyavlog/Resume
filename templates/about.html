@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} About{% endblock title%}
+{% block body %}
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+            {% for i in about %}
+          <div class="section-title">
+            <h2>About</h2>
+            <p>{{ i.summary }}</p>
+          </div>
+  
+          <div class="row">
+            <div class="col-lg-4" data-aos="fade-right">
+              <img src="{% static 'assets/img/passportsize.jpg' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+              <h3>{{ i.title }}</h3>
+              <p class="fst-italic">
+                
+              </p>
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>{{ i.birthday }}</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{ i.phone }}</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{ i.city }}</span></li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{ i.age }}</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>{{ i.degree }}</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>{{ i.email }}</span></li>
+                    
+                  </ul>
+                </div>
+              </div>
+              <p>
+                {{ i.extracurricular }}
+              </p>
+              <div class="resume-buttons d-flex align-items-center justify-content-end mt-3">
+                <a href="{% static 'assets/img/Pratigya_resume.pdf' %}" target="_blank" class="btn btn-primary me-2">View Resume</a>
+                <a href="{% static 'assets/img/Pratigya_resume.pdf' %}" download="Pratigya_Resume.pdf" class="btn btn-secondary">Download Resume</a>
+            </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </section><!-- End About Section -->
+{% endblock body %}

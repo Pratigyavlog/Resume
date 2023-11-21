@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Projects {% endblock title %}
+{% block body %}
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <p>Dive into my diverse projects showcasing skills in HTML, CSS, JavaScript, and Django.
+          Click on the links to experience each project on its GitHub page.
+          Embark on a journey of creativity and innovation - your gateway to my coding world awaits!</p>
+      </div>
+
+      <div class="row">
+        {% for project in projects %}
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="row">
+              <div class="col-lg-12 image-container" data-aos="fade-right">
+                <img src="{{ project.img.url }}" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-12">
+                <div class="icon"><i class="bi bi-briefcase"></i></div>
+                <h4 class="title"><a href="">{{ project.title }}</a></h4>
+                <p class="description">{{ project.describe }}</p>
+                <div class="text-center">
+                  <a href={{ project.github_link}} target="_blank" class="btn btn-dark">View Project</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+
+  <style>
+    .image-container img {
+      height: 200px; /* Adjust the height as needed */
+      width: 100%; /* Ensures the image takes the full width of the container */
+      object-fit: cover; /* Ensures the image retains its aspect ratio */
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  </style>
+{% endblock body %}
